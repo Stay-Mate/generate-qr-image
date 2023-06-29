@@ -1,0 +1,27 @@
+# 가상 환경
+venv/
+myenv/
+virtualenv/
+
+# 종속성 관리
+requirements.txt
+pip-wheel-metadata/
+pip-egg-info/
+dist/
+Pipfile
+Pipfile.lock
+
+# 로컬 설정 파일
+.env
+local_settings.py
+
+# 캐시 파일 및 디렉토리
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# IDE/편집기 관련 파일
+.vscode/
+.idea/
+.pycproject/
+.pydevproject/
