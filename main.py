@@ -5,8 +5,16 @@ import time
 
 while True:
     try:
-        response = requests.get('http://127.0.0.1:5001/api/random')
-        random_string = response.json()["generateNum"]
+        response = requests.get('http://127.0.0.1:8080/api/random')
+        random_string = response.json()
+
+        print(random_string)
+
+        if 'generateNum' not in random_string:
+            print('server error')
+            continue
+
+        random_string = random_string['generateNum']
 
         base64_encoded = base64.b64encode(random_string.encode()).decode()
 
@@ -17,6 +25,6 @@ while True:
         img = qr.make_image(fill='black', back_color='white')
         img.save('qrcode.png')
 
-        time.sleep(3)  # 3초간 대기
+        time.sleep(1)
     except KeyboardInterrupt:
         break  # Ctrl+C를 누르면 반복 종료
