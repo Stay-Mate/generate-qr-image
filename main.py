@@ -5,6 +5,7 @@ import time
 
 while True:
     try:
+        # response = requests.get('https://stay-mate-server-lpqoladsrq-uc.a.run.app/api/random')
         response = requests.get('http://127.0.0.1:8080/api/random')
         random_string = response.json()
 
